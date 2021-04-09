@@ -15,11 +15,21 @@ class PostsController < ApplicationController
     end
   end
   def confirm
+    @posts = Post.all
     @post = Post.new(post_params)
     render :new if @post.invalid?
   end
+  def destroy
+    set_posts
+    @post.destroy
+    redirect_to posts_path, notice:"消しったー"
+  end  
   private
   def post_params
     params.require(:post).permit(:content)
   end
+  def set_posts
+    @post = Post.find(params[:id])
+  end
+  
 end
