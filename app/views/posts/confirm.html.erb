@@ -54,12 +54,12 @@
             </div>
             <div class="article_form">
                 <%= form_with(model: @post, local: true) do |form| %>
-                    <ul class="blog_content">
+                    <ul style="height: 140px;"class="blog_content">
                         <li>確認画面</li>
                         <%= form.hidden_field :content %>
                         <li>本文：<%= @post.content %></li>
                         <li style="float:right;"><%= form.submit "ヅイート！！" %></li>
-                        <%= form.submit "戻る", name: 'back' %>
+                        <li style="float:right;"><%= form.submit "戻る", name: 'back' %></li>
                     </ul>
                 <% end %>
             </div>

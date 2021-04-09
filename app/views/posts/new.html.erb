@@ -55,17 +55,22 @@
             <div class="article_form">
                 <%= form_with(model: @post, local: true, url: choose_new_create_confirm_or_edit) do |form| %>
                     <ul class="blog_content">
-                        <li><%= form.text_field :content, :placeholder => "いまなにしてる？" %></li>
+                        <li><%= form.text_field :content, :placeholder => "いまなにしてる？" ,size: "50", style: "border: none"%></li>
                         <li style="float:right;"><%= form.submit "ヅイートする" %></li>
                     </ul>
                 <% end %>
             </div>
             <div class="article_footer">
                 <h3>呟き一覧表示</h3>
-                <ul>
-                    <li>呟き1</li>
-                    <li>呟き2</li>
-                </ul>
+                <p><%= notice %></p>
+                <table>
+                    <% @posts.each do |posts| %>
+                    <tr>
+                        <td><%= posts.content %></td>
+                        <td><%=link_to image_tag("gomi.jpeg", width: "30"), post_path(posts[:id]) ,method: :delete, data: {confirm: "本当に消します？"}%></td>
+                    </tr>
+                    <% end %>
+                </table>
             </div>
         </article>
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 div_asside">
