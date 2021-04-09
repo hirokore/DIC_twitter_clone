@@ -5,16 +5,18 @@ class PostsController < ApplicationController
   def create
     @comment_new = Post.new(post_params)
     if @comment_new.save
-      redirect_to posts_path, notice: "作成完了"
+      redirect_to posts_path, notice: "ツイートされたった"
     else
       render :new
     end
+  end
+  def confirm
+    @boot = Boot.new(boot_params)
+    render :new if @boot.invalid?
   end
   
   private
   def post_params
     params.require(:post).permit(:content)
   end
-  
-
 end

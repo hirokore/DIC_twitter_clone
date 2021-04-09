@@ -1,0 +1,30 @@
+<body class="container">
+    <div class="row div_body">
+        <header class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+        </header>
+        <article class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+            <div>
+                <a class="article_home" href="/posts">ホーム</a>
+            </div>
+            <div class="article_form">
+                <%= form_with(model: @comment_new, local: true) do |form| %>
+                    <ul class="blog_content">
+                        <li>確認画面</li>
+                        <%= form.hidden_field :content %>
+                        <li>本文：<%= @boot.content %></li>
+                        <li style="float:right;"><%= form.submit "ヅイート！！" %></li>
+                        <%= form.submit "戻る", name: 'back' %>
+                    </ul>
+                <% end %>
+            </div>
+            <div class="article_footer">
+            </div>
+        </article>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 div_asside">
+            <footer>
+                <h1>footer</h1>
+                <p>© 2029 Zwitter, Inc.</p>
+            </footer>
+        </div>
+    </div>
+</body>
