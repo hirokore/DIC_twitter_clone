@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'posts#top'
-  get 'posts', to: 'posts#top'
+  root to: 'posts#new'
   resources :posts do
     collection do
       post :confirm

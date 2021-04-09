@@ -1,26 +1,81 @@
 <body class="container">
     <div class="row div_body">
         <header class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+            <div class="div_nav">
+                <nav class="nav1">
+                    <li>
+                          <%# app/assets/images %>
+                          <%= image_tag "logo.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+                    </li>
+                    <li>
+                          <%# app/assets/images %>
+                          <%= image_tag "home.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+                    </li>
+                    <li>
+                          <%# app/assets/images %>
+                          <%= image_tag "sharp.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+                    </li>
+                    <li>
+                          <%# app/assets/images %>
+                          <%= image_tag "suzu.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+                    </li>
+                    <li>
+                          <%# app/assets/images %>
+                          <%= image_tag "mail.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+                    </li>
+                    <li>
+                          <%# app/assets/images %>
+                          <%= image_tag "file.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+                    </li>
+                    <li>
+                          <%# app/assets/images %>
+                          <%= image_tag "comment.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+                    </li>
+                    <li>
+                          <%# app/assets/images %>
+                          <%= image_tag "people.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+                    </li>
+                    <li>
+                          <%# app/assets/images %>
+                          <%= image_tag "three_reader.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+                    </li>
+                </nav>
+                <nav class="nav2">
+                    <li>
+                          <%# app/assets/images %>
+                          <%= image_tag "people2.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+                    </li>
+                </nav>
+            </div>
         </header>
         <article class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
             <div>
                 <a class="article_home" href="/posts">ホーム</a>
             </div>
             <div class="article_form">
-                <%= form_with(model: @comment_new, local: true) do |form| %>
+                <%= form_with(model: @post, local: true) do |form| %>
                     <ul class="blog_content">
                         <li>確認画面</li>
                         <%= form.hidden_field :content %>
-                        <li>本文：<%= @boot.content %></li>
+                        <li>本文：<%= @post.content %></li>
                         <li style="float:right;"><%= form.submit "ヅイート！！" %></li>
                         <%= form.submit "戻る", name: 'back' %>
                     </ul>
                 <% end %>
             </div>
             <div class="article_footer">
+                <h3>呟き一覧表示</h3>
+                <ul>
+                    <li>呟き1</li>
+                    <li>呟き2</li>
+                </ul>
             </div>
         </article>
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 div_asside">
+            <aside>
+                <h1>aside</h1>
+                <p>asideだよ！</p>
+            </aside>
             <footer>
                 <h1>footer</h1>
                 <p>© 2029 Zwitter, Inc.</p>
