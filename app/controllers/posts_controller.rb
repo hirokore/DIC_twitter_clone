@@ -24,6 +24,18 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path, notice:"消しったー"
   end  
+  def edit
+    set_posts
+    @posts =Post.all
+  end
+  def update
+    set_posts
+    if @post.update(post_params)
+      redirect_to posts_path, notice: "いじったー"
+    else
+      render :edit
+    end
+  end
   private
   def post_params
     params.require(:post).permit(:content)

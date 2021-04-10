@@ -53,7 +53,7 @@
                 <a class="article_home" href="/posts">ホーム</a>
             </div>
             <div class="article_form">
-                <%= form_with(model: @post, local: true, url: choose_new_create_confirm_or_edit) do |form| %>
+                <%= form_with(model: @post, local: true) do |form| %>
                     <ul class="blog_content">
                         <li><%= form.text_field :content, :placeholder => "いまなにしてる？" ,size: "50", style: "border: none"%></li>
                         <li style="float:right;"><%= form.submit "ヅイートする" %></li>
@@ -61,7 +61,7 @@
                 <% end %>
             </div>
             <div class="article_footer">
-                <h3>呟き一覧表示</h3>
+                <h2 style="color:red;">⬆️⬆️⬆️編集モードなう⬆️⬆️⬆️</h2>
                 <p><%= notice %></p>
                 <table>
                     <% @posts.each do |posts| %>
