@@ -31,9 +31,10 @@ class PostsController < ApplicationController
   end  
   def edit
     set_posts
-    @posts =Post.all
+    @posts = Post.all
   end
   def update
+    @posts = Post.all
     set_posts
     if @post.update(post_params)
       redirect_to posts_path, notice: "いじったー"

@@ -53,7 +53,7 @@
                 <a class="article_home" href="/posts">ホーム</a>
             </div>
             <div class="article_form">
-                <%= form_with(model: @post, local: true, url: choose_new_create_confirm_or_edit) do |form| %>
+                <%= form_with(model: @post, local: true) do |form| %>
                         <% if @post.errors.any? %>
                             <div class="error_explation">
                             <h2><%= @post.errors.count %>件のエラーがあります。</h2>
@@ -66,7 +66,9 @@
                         <% end %>    
                     <ul class="blog_content">
                         <li><%= form.text_field :content, :placeholder => "いまなにしてる？" ,size: "50", style: "border: none"%></li>
-                        <li style="float:right;"><%= form.submit "ヅイートする" %></li>
+                        <li style="float:right;">
+                            <%= form.submit "ヅイート！！" %>
+                        </li>
                     </ul>
                 <% end %>
             </div>
