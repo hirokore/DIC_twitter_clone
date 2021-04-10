@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_posts,only: [:edit, :update, :destroy]
+  
   def new
     @post = Post.new
     @posts = Post.all
@@ -29,19 +31,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    set_posts
     @post.destroy
     redirect_to posts_path, notice:"消しったー"
   end  
 
   def edit
-    set_posts
     @posts = Post.all
   end
 
   def update
-    @posts = Post.all
-    set_posts
     if @post.update(post_params)
       redirect_to posts_path, notice: "いじったー"
     else
@@ -54,7 +52,7 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:content)
   end
-  
+
   def set_posts
     @post = Post.find(params[:id])
   end

@@ -54,6 +54,12 @@
       </div>
       <div class="article_form">
         <%= form_with(model: @post, local: true) do |form| %>
+          <ul class="blog_content">
+            <li><%= form.text_area :content, :placeholder => "いまなにしてる？" ,size: "40", style: "border: none"%></li>
+            <li style="float:right;">
+              <%= form.submit "ヅイート！！" %>
+            </li>
+          </ul>
             <% if @post.errors.any? %>
               <div class="error_explation">
               <h2><%= @post.errors.count %>件のエラーがあります。</h2>
@@ -64,12 +70,6 @@
                 </ul>
               </div>
             <% end %>  
-          <ul class="blog_content">
-            <li><%= form.text_area :content, :placeholder => "いまなにしてる？" ,size: "40", style: "border: none"%></li>
-            <li style="float:right;">
-              <%= form.submit "ヅイート！！" %>
-            </li>
-          </ul>
         <% end %>
       </div>
       <div class="article_footer">
