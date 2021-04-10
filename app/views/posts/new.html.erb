@@ -1,22 +1,24 @@
 <article class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
   <div>
-  <a class="article_home" href="/posts">ホーム</a>
+    <a class="article_home" href="/posts">ホーム</a>
   </div>
   <div class="article_form">
   <%= form_with(model: @post, local: true, url: choose_new_create_confirm_or_edit) do |form| %>
     <ul class="blog_content">
       <li><%= form.text_area :content, :placeholder => "いまなにしてる？" ,size: "40", style: "border: none"%></li>
-      <li style="float:right;"><%= form.submit "ヅイートする" %></li>
+      <li style="float:right;">
+        <%= form.submit "ヅイート！！" %>
+      </li>
     </ul>
     <% if @post.errors.any? %>
-    <div class="error_explation">
-      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
-      <ul>
-      <% @post.errors.full_messages.each do |msg|%>
-        <li><%= msg %></li>
+      <div class="error_explation">
+        <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+        <ul>
+        <% @post.errors.full_messages.each do |msg|%>
+          <li><%= msg %></li>
         <% end %>
-      </ul>
-    </div>
+        </ul>
+      </div>
     <% end %>  
   <% end %>
   </div>

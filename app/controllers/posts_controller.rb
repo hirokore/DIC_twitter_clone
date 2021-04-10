@@ -40,6 +40,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    @posts = Post.all
     if @post.update(post_params)
       redirect_to posts_path, notice: "いじったー"
     else
