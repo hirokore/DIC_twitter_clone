@@ -9,7 +9,67 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="container">
+    <div class="row div_body">
+      <header class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+        <div class="div_nav">
+          <nav class="nav1">
+            <li>
+              <%# app/assets/images %>
+              <%= image_tag "logo.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+            </li>
+            <li>
+              <%# app/assets/images %>
+              <%= image_tag "home.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+            </li>
+            <li>
+              <%# app/assets/images %>
+              <%= image_tag "sharp.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+            </li>
+            <li>
+              <%# app/assets/images %>
+              <%= image_tag "suzu.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+            </li>
+            <li>
+              <%# app/assets/images %>
+              <%= image_tag "mail.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+            </li>
+            <li>
+              <%# app/assets/images %>
+              <%= image_tag "file.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+            </li>
+            <li>
+              <%# app/assets/images %>
+              <%= image_tag "comment.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+            </li>
+            <li>
+              <%# app/assets/images %>
+              <%= image_tag "people.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+            </li>
+            <li>
+              <%# app/assets/images %>
+              <%= image_tag "three_reader.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+            </li>
+          </nav>
+          <nav class="nav2">
+            <li>
+              <%# app/assets/images %>
+              <%= image_tag "people2.jpeg", alt: "Rails icon", id: "assets", class: "image", width: "40px" %>
+            </li>
+          </nav>
+        </div>
+      </header>
+      <%= yield %>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 div_asside">
+        <aside>
+          <h1>aside</h1>
+          <p>asideだよ！</p>
+        </aside>
+        <footer>
+          <h1>footer</h1>
+          <p>© 2029 Zwitter, Inc.</p>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>

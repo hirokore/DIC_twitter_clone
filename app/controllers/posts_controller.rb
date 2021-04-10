@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_posts,only: [:edit, :update, :destroy]
+  before_action :set_post,only: [:edit, :update, :destroy]
   
   def new
     @post = Post.new
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:content)
   end
 
-  def set_posts
+  def set_post
     @post = Post.find(params[:id])
   end
   
