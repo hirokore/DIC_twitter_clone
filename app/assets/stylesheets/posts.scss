@@ -56,10 +56,15 @@ article .article_home {
     font-weight: bold;
 }
 article .article_form ul {
-    height: 100px;
+    height: 160px;
 }
 article .article_form li {
     margin: 10px 10px 0 0;
+}
+.confirm_li {
+    margin-top: 20px;
+    padding-top: 20px;
+    float: right;
 }
 article li {
     list-style: none;
