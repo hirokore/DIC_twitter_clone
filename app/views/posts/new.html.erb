@@ -5,7 +5,7 @@
   <div class="article_form">
   <%= form_with(model: @post, local: true, url: choose_new_create_confirm_or_edit) do |form| %>
     <ul class="blog_content">
-      <li><%= form.text_area :content, :placeholder => "いまなにしてる？" ,size: "40", style: "border: none"%></li>
+      <li class="t_text_area"><%= form.text_area :content, :placeholder => "いまなにしてる？" , style: "border: none"%></li>
       <li style="float:right;">
         <%= form.submit "ヅイート！！" %>
       </li>
